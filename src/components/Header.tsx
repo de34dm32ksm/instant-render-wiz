@@ -6,7 +6,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <a href="/" className="flex items-center">
           <span className="font-serif text-2xl font-semibold tracking-tight">
-            <span className="italic">Prayer</span>Song
+            <span className="italic">Canción</span>Divina
           </span>
         </a>
         
@@ -15,21 +15,21 @@ const Header = () => {
             href="#track" 
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-            Track Order
+            Seguir Pedido
           </a>
           <a 
             href="#reviews" 
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-            Reviews
+            Testimonios
           </a>
           <Button variant="default" size="sm" className="font-medium">
-            Create Your Song
+            Crea tu Canción
           </Button>
         </nav>
 
         <Button variant="default" size="sm" className="md:hidden font-medium">
-          Create
+          Crear
         </Button>
       </div>
     </header>

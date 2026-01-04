@@ -4,30 +4,30 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    quote: "Oh praise God! This is absolutely breathtaking. I can't believe it… I am going to have a hard time keeping this a secret until Sunday. We will listen to it on our way to church!",
+    quote: "¡Oh alabado sea Dios! Esto es absolutamente impresionante. No puedo creerlo... Voy a tener dificultades para mantener esto en secreto hasta el domingo. ¡Lo escucharemos camino a la iglesia! Dios bendiga el trabajo que hacen.",
     author: "Wendy B.",
     verified: true,
-    songTitle: "God Gave Me You",
+    songTitle: "Dios Me Dio a Ti",
   },
   {
-    quote: "Very very wonderful song. I absolutely loved it and so did Dave! I put it on my FB, I sent it to his boys so they could hear it… I will be singing 🎵 your praises.",
+    quote: "Una canción muy muy hermosa. ¡Me encantó y a Dave también! La puse en mi Facebook, se la envié a sus hijos para que la escucharan... Estaré cantando 🎵 sus alabanzas.",
     author: "Markeeta B.",
     verified: true,
-    songTitle: "His Love Story",
+    songTitle: "Su Historia de Amor",
   },
   {
-    quote: "Absolutely beautiful, you captured such special moments… we both were crying. Can not asked for a more beautiful song. Thank you so much for this amazing gift.",
+    quote: "Absolutamente hermosa, capturaron momentos tan especiales... ambos estábamos llorando. No podría pedir una canción más bella. Muchas gracias por este increíble regalo.",
     author: "Pamela S.",
     verified: true,
-    songTitle: "I Still Believe",
+    songTitle: "Aún Creo",
   },
 ];
 
 const songPreviews = [
-  { title: "Three Squeezes and a Miracle", artist: "PrayerSong" },
-  { title: "My Heart is Yours", artist: "PrayerSong" },
-  { title: "Mommy's Love, God's Promise", artist: "PrayerSong" },
-  { title: "Chosen Hearts", artist: "PrayerSong" },
+  { title: "Tres Apretones", artist: "CanciónDivina" },
+  { title: "Mi Corazón es Tuyo", artist: "CanciónDivina" },
+  { title: "El Amor de Mamá", artist: "CanciónDivina" },
+  { title: "Corazones Elegidos", artist: "CanciónDivina" },
 ];
 
 const Testimonials = () => {
@@ -41,7 +41,7 @@ const Testimonials = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-serif font-semibold text-center mb-12"
         >
-          Why 1000+ Customers Love PrayerSong
+          Por qué más de 1000 Clientes Aman CanciónDivina
         </motion.h2>
 
         {/* Song Previews Grid */}
@@ -94,7 +94,7 @@ const Testimonials = () => {
                     <div>
                       <p className="font-medium text-sm">{testimonial.author}</p>
                       {testimonial.verified && (
-                        <p className="text-xs text-muted-foreground">Verified Customer</p>
+                        <p className="text-xs text-muted-foreground">Cliente Verificado</p>
                       )}
                     </div>
                   </div>

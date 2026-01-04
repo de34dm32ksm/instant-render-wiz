@@ -7,18 +7,18 @@ import { useState } from "react";
 const features = [
   {
     icon: Music,
-    title: "Radio-Quality Song",
-    description: "Radio-quality PrayerSong, ready to share",
+    title: "Canción de Calidad Radial",
+    description: "CanciónDivina de calidad radial, lista para compartir",
   },
   {
     icon: FileText,
-    title: "Personalized Lyrics",
-    description: "Custom lyrics inspired by your story",
+    title: "Letras Personalizadas",
+    description: "Letras personalizadas inspiradas en tu historia",
   },
   {
     icon: Clock,
-    title: "7-Day Delivery",
-    description: "Receive your finished song in just 7 days",
+    title: "Entrega en 7 Días",
+    description: "Recibe tu canción terminada en solo 7 días",
   },
 ];
 
@@ -35,7 +35,7 @@ const WhatYouGet = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-serif font-semibold text-center mb-4"
         >
-          What You Get
+          Lo Que Recibes
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0 }}
@@ -44,7 +44,7 @@ const WhatYouGet = () => {
           transition={{ delay: 0.1, duration: 0.5 }}
           className="text-center text-muted-foreground mb-12 max-w-xl mx-auto"
         >
-          Once we finish your song, you'll get an email with a link to play your PrayerSong like below!
+          Una vez que terminemos tu canción, recibirás un correo con un enlace para reproducir tu CanciónDivina ¡como abajo!
         </motion.p>
 
         <div className="max-w-4xl mx-auto">
@@ -69,8 +69,8 @@ const WhatYouGet = () => {
                     )}
                   </button>
                   <div className="flex-1 min-w-0">
-                    <p className="font-serif font-semibold text-lg truncate">Your Custom PrayerSong</p>
-                    <p className="text-sm text-muted-foreground">PrayerSong</p>
+                    <p className="font-serif font-semibold text-lg truncate">Tu CanciónDivina Personalizada</p>
+                    <p className="text-sm text-muted-foreground">CanciónDivina</p>
                     <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden">
                       <div className="h-full bg-primary rounded-full" style={{ width: "35%" }} />
                     </div>
@@ -116,11 +116,11 @@ const WhatYouGet = () => {
             className="text-center"
           >
             <Button size="lg" className="px-8 mb-3">
-              Create My Custom Song
+              Crear Mi Canción Personalizada
             </Button>
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
               <Shield className="w-4 h-4" />
-              Risk-Free Purchase • 30 day money back guarantee
+              Garantía de Devolución de 30 Días
             </p>
           </motion.div>
         </div>
