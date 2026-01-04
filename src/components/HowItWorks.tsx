@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FileText, Music, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -74,9 +75,11 @@ const HowItWorks = () => {
           transition={{ delay: 0.4, duration: 0.5 }}
           className="text-center"
         >
-          <Button size="lg" className="px-8">
-            Comienza tu Historia
-          </Button>
+          <Link to="/create?step=basics">
+            <Button size="lg" className="px-8">
+              Comienza tu Historia
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

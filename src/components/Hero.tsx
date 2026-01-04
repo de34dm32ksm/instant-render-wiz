@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Play, Gift, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-couple.jpg";
 
 const Hero = () => {
@@ -64,10 +65,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
           >
-            <Button size="lg" className="text-base px-8 py-6 gap-2 shadow-lg hover:shadow-xl transition-shadow">
-              <Gift className="w-5 h-5" />
-              Crea su Regalo Perfecto
-            </Button>
+            <Link to="/create?step=basics">
+              <Button size="lg" className="text-base px-8 py-6 gap-2 shadow-lg hover:shadow-xl transition-shadow">
+                <Gift className="w-5 h-5" />
+                Crea su Regalo Perfecto
+              </Button>
+            </Link>
           </motion.div>
 
           {/* Delivery Promise */}
