@@ -18,12 +18,12 @@ const Hero = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-elevated">
               <img 
                 src={heroImage} 
-                alt="Happy couple sharing an emotional moment" 
+                alt="Pareja feliz compartiendo un momento emotivo" 
                 className="w-full aspect-video object-cover"
               />
               <button className="absolute bottom-4 right-4 bg-card/95 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 text-sm font-medium shadow-lg hover:bg-card transition-colors">
                 <Play className="w-4 h-4 fill-primary text-primary" />
-                Listen to Example
+                Escuchar Ejemplo
               </button>
             </div>
           </motion.div>
@@ -35,7 +35,7 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4"
           >
-            The #1 Custom Christian Song Platform
+            La Plataforma #1 de Canciones Personalizadas — Más de 1,000 Familias Emocionadas
           </motion.p>
 
           {/* Main Headline */}
@@ -45,7 +45,7 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight mb-6"
           >
-            "This PrayerSong Brought Me To Tears!"
+            Haz que Alguien Llore de Alegría En Solo 7 Días
           </motion.h1>
 
           {/* Subheadline */}
@@ -55,7 +55,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="text-lg md:text-xl font-serif italic text-muted-foreground mb-8"
           >
-            Surprise Your Loved One with a Custom Christian Song They'll Never Forget
+            Músicos cristianos profesionales convierten la historia de tu ser querido en una canción única — solo necesitas responder 5 preguntas simples.
           </motion.p>
 
           {/* CTA Button */}
@@ -66,7 +66,7 @@ const Hero = () => {
           >
             <Button size="lg" className="text-base px-8 py-6 gap-2 shadow-lg hover:shadow-xl transition-shadow">
               <Gift className="w-5 h-5" />
-              Start My Custom Song
+              Crea su Regalo Perfecto
             </Button>
           </motion.div>
 
@@ -77,7 +77,7 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="text-sm text-muted-foreground mt-4 font-medium"
           >
-            Delivered With Love, Prayer, & Care In 7 Days
+            Solo 8 lugares disponibles esta semana
           </motion.p>
 
           {/* Social Proof */}
@@ -106,7 +106,7 @@ const Hero = () => {
                   +998
                 </div>
               </div>
-              <span className="text-sm text-muted-foreground">Loved by 1000+ families</span>
+              <span className="text-sm text-muted-foreground">Amado por 1000+ familias</span>
             </div>
           </motion.div>
         </div>

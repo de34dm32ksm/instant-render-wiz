@@ -8,32 +8,40 @@ import {
 
 const faqs = [
   {
-    question: "What makes these songs special?",
-    answer: "Each PrayerSong is custom-written from your story. It is a one-of-a-kind gift rooted in Scripture, prayer, and genuine care.",
+    question: "¿Cuánto cuesta una canción personalizada?",
+    answer: "Cada CanciónDivina tiene un precio accesible para que puedas regalar un recuerdo único a tu ser querido. Visita nuestra página de creación para ver los precios actuales.",
   },
   {
-    question: "How long does it take to receive the song?",
-    answer: "Your finished PrayerSong is delivered in 7 days. Optionally, if you need your song faster, we can deliver in 24 hours for an extra fee of $59 - simply select the priority delivery upgrade after you purchase your song.",
+    question: "¿Qué hace que una CanciónDivina sea tan única?",
+    answer: "Cada CanciónDivina está escrita a medida desde tu historia. Es un regalo único enraizado en las Escrituras, la oración y el cuidado genuino.",
   },
   {
-    question: "Can I get my PrayerSong faster in 24 hours?",
-    answer: "Yes! While standard delivery is 7 days, we offer priority 24 hour delivery for an additional $59. Simply select the priority delivery upgrade after you purchase your song, and we'll have your PrayerSong ready in just 24 hours.",
+    question: "La necesito para una fecha especial. ¿Cuándo llegará?",
+    answer: "Tu CanciónDivina terminada se entrega en 7 días. Opcionalmente, si necesitas tu canción más rápido, podemos entregarla en 24 horas por una tarifa adicional.",
   },
   {
-    question: "What themes can I write about?",
-    answer: "Anything that honors God and your loved one: birthdays, anniversaries, weddings, grief, encouragement, testimonies, or prayers for strength and healing.",
+    question: "¿Realmente puedo obtener una canción personalizada en solo 24 horas?",
+    answer: "¡Sí! Mientras que la entrega estándar es de 7 días, ofrecemos entrega prioritaria en 24 horas. Simplemente selecciona la opción de entrega prioritaria después de comprar tu canción.",
   },
   {
-    question: "What is your process?",
-    answer: "Every PrayerSong is created to the same standard as the songs you hear on the radio. Our lyricists pour their hearts into making each lyrics personal and meaningful, then our producers use the latest music production technology to bring your heartfelt lyrics to life. Each song typically reaches at least 3 separate team members before reaching your inbox.",
+    question: "¿Puedo hacer una canción para varias personas (ej. hermanos, pareja, familia)?",
+    answer: "¡Absolutamente! Puedes crear una canción para cualquier persona o grupo: tu pareja, hijos, padres, hermanos o toda la familia.",
   },
   {
-    question: "How will I receive the finished song?",
-    answer: "You will receive a secure link via email to play your PrayerSong on any device and to easily share it with family and friends.",
+    question: "¿Qué tipo de historias u ocasiones funcionan mejor?",
+    answer: "Cualquier cosa que honre a Dios y a tu ser querido: cumpleaños, aniversarios, bodas, duelo, aliento, testimonios u oraciones por fortaleza y sanación.",
   },
   {
-    question: "Can I use the song in a church or event?",
-    answer: "Yes, you may share and play your PrayerSong at private events and church gatherings.",
+    question: "¿Cómo ocurre la magia? ¿Cuál es el proceso?",
+    answer: "Cada CanciónDivina se crea con el mismo estándar que las canciones que escuchas en la radio. Nuestros letristas ponen su corazón en hacer cada letra personal y significativa, luego nuestros productores usan la última tecnología de producción musical para dar vida a tus letras.",
+  },
+  {
+    question: "¿Cómo recibiré y compartiré mi canción?",
+    answer: "Recibirás un enlace seguro por correo electrónico para reproducir tu CanciónDivina en cualquier dispositivo y compartirla fácilmente con familiares y amigos.",
+  },
+  {
+    question: "¿Podemos reproducir esto en nuestra iglesia o evento?",
+    answer: "Sí, puedes compartir y reproducir tu CanciónDivina en eventos privados y reuniones de la iglesia.",
   },
 ];
 
@@ -48,7 +56,7 @@ const FAQ = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-serif font-semibold text-center mb-12"
         >
-          Frequently Asked Questions
+          Preguntas Frecuentes
         </motion.h2>
 
         <motion.div
@@ -80,9 +88,9 @@ const FAQ = () => {
           className="text-center mt-10"
         >
           <p className="text-muted-foreground">
-            Got More Questions?{" "}
-            <a href="mailto:hello@prayersong.com" className="text-primary hover:underline font-medium">
-              Reach out to us at hello@prayersong.com
+            ¿Aún tienes dudas?{" "}
+            <a href="mailto:contact@hosannasong.com" className="text-primary hover:underline font-medium">
+              contact@hosannasong.com
             </a>
           </p>
         </motion.div>

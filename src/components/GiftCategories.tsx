@@ -2,15 +2,15 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 const categories = [
-  { title: "For Your Partner", emoji: "💑" },
-  { title: "For Children", emoji: "👶" },
-  { title: "For Loss", emoji: "🕊️" },
-  { title: "For Parents", emoji: "👨‍👩‍👧" },
-  { title: "For Yourself", emoji: "🙏" },
-  { title: "For Strength", emoji: "💪" },
-  { title: "For Healing", emoji: "❤️‍🩹" },
-  { title: "For Prayers", emoji: "✝️" },
-  { title: "For Breakthroughs", emoji: "⭐" },
+  { title: "Para tu Pareja", emoji: "💑" },
+  { title: "Para Hijos", emoji: "👶" },
+  { title: "Para Pérdida", emoji: "🕊️" },
+  { title: "Para Padres", emoji: "👨‍👩‍👧" },
+  { title: "Para Ti Mismo", emoji: "🙏" },
+  { title: "Para Fortaleza", emoji: "💪" },
+  { title: "Para Sanación", emoji: "❤️‍🩹" },
+  { title: "Para Oraciones", emoji: "✝️" },
+  { title: "Para Avances", emoji: "⭐" },
 ];
 
 const GiftCategories = () => {
@@ -24,7 +24,7 @@ const GiftCategories = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-serif font-semibold text-center mb-12"
         >
-          Gift a PrayerSong to a Loved One, or to Yourself!
+          ¡Regala una CanciónDivina a un Ser Querido, o a Ti Mismo!
         </motion.h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto mb-12">
@@ -53,7 +53,7 @@ const GiftCategories = () => {
           className="text-center"
         >
           <Button size="lg" className="px-8">
-            Start Creating Your Song
+            Comienza a Crear tu Canción
           </Button>
         </motion.div>
       </div>

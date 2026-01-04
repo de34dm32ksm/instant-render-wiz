@@ -5,24 +5,24 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center">
             <span className="font-serif text-xl font-semibold">
-              <span className="italic">Prayer</span>Song
+              <span className="italic">Canción</span>Divina
             </span>
           </div>
           
           <nav className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-foreground transition-colors">
-              Privacy Policy
+              Política de Privacidad
             </a>
             <a href="#" className="hover:text-foreground transition-colors">
-              Terms of Service
+              Términos de Servicio
             </a>
-            <a href="mailto:hello@prayersong.com" className="hover:text-foreground transition-colors">
-              Contact
+            <a href="mailto:contact@hosannasong.com" className="hover:text-foreground transition-colors">
+              Contacto
             </a>
           </nav>
 
           <p className="text-sm text-muted-foreground">
-            © 2024 PrayerSong. All rights reserved.
+            © 2024 CanciónDivina. Todos los derechos reservados.
           </p>
         </div>
       </div>

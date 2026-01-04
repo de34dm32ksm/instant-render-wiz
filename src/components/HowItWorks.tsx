@@ -5,17 +5,17 @@ import { FileText, Music, Mail } from "lucide-react";
 const steps = [
   {
     number: 1,
-    title: "Fill out the survey",
+    title: "Comparte su Historia",
     icon: FileText,
   },
   {
     number: 2,
-    title: "We create your song",
+    title: "Creamos tu Canción",
     icon: Music,
   },
   {
     number: 3,
-    title: "Delivered in 7 days to your email",
+    title: "Entregada a tu Correo",
     icon: Mail,
   },
 ];
@@ -41,7 +41,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-serif font-semibold text-center mb-12"
         >
-          How PrayerSong Works
+          Cómo Funciona CanciónDivina
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
@@ -75,7 +75,7 @@ const HowItWorks = () => {
           className="text-center"
         >
           <Button size="lg" className="px-8">
-            Start My Custom Song
+            Comienza tu Historia
           </Button>
         </motion.div>
       </div>
