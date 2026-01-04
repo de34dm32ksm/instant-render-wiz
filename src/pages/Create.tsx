@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { toast } from "sonner";
 
 const STEPS = ["basics", "occasion", "story", "style", "details", "review"];
 
@@ -78,6 +79,30 @@ const Create = () => {
 
   const handleSelectOption = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmitToGoogleForm = async () => {
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScEPvbdWRJpR-Y5liv86CUXXJlPeRxEHXj_8iEToRk_5U0daA/formResponse";
+    
+    // Replace with your actual entry ID for "Como se llama"
+    const ENTRY_RECIPIENT_NAME = "entry.646865340";
+    
+    const formDataToSend = new FormData();
+    formDataToSend.append(ENTRY_RECIPIENT_NAME, formData.recipientName);
+    
+    try {
+      await fetch(GOOGLE_FORM_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formDataToSend,
+      });
+      toast.success("Datos enviados correctamente", {
+        description: `Nombre: ${formData.recipientName}`,
+      });
+    } catch (error) {
+      toast.error("Error al enviar los datos");
+      console.error("Google Form submission error:", error);
+    }
   };
 
   const renderStepContent = () => {
@@ -354,7 +379,7 @@ const Create = () => {
             </div>
 
             <div className="text-center">
-              <Button size="lg" className="px-12">
+              <Button size="lg" className="px-12" onClick={handleSubmitToGoogleForm}>
                 Continuar al Pago
               </Button>
               <p className="text-xs text-muted-foreground mt-3">
