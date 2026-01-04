@@ -1,17 +1,18 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AnnouncementBar = () => {
   return (
     <div className="bg-primary text-primary-foreground py-2.5 px-4 text-center">
-      <a 
-        href="#create" 
+      <Link 
+        to="/create?step=basics" 
         className="inline-flex items-center gap-2 text-sm font-medium hover:opacity-90 transition-opacity"
       >
         <span>✨ 100% satisfacción garantizada o te devolvemos tu dinero</span>
         <span className="underline inline-flex items-center gap-1">
           Crea tu canción <ArrowRight className="w-4 h-4" />
         </span>
-      </a>
+      </Link>
     </div>
   );
 };

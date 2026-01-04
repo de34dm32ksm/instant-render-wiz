@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const categories = [
   { title: "Para tu Pareja", emoji: "💑" },
@@ -52,9 +53,11 @@ const GiftCategories = () => {
           transition={{ delay: 0.3, duration: 0.5 }}
           className="text-center"
         >
-          <Button size="lg" className="px-8">
-            Comienza a Crear tu Canción
-          </Button>
+          <Link to="/create?step=basics">
+            <Button size="lg" className="px-8">
+              Comienza a Crear tu Canción
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

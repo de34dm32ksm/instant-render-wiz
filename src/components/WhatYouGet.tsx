@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Music, FileText, Clock, Play, Pause, Shield } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -115,9 +116,11 @@ const WhatYouGet = () => {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="text-center"
           >
-            <Button size="lg" className="px-8 mb-3">
-              Crear Mi Canción Personalizada
-            </Button>
+            <Link to="/create?step=basics">
+              <Button size="lg" className="px-8 mb-3">
+                Crear Mi Canción Personalizada
+              </Button>
+            </Link>
             <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
               <Shield className="w-4 h-4" />
               Garantía de Devolución de 30 Días
