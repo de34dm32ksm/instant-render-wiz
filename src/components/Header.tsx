@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import logo from "@/assets/canto-de-fe-logo.png";
 
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/40">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Canto De Fe" className="h-10" />
+          <span className="font-serif text-2xl font-semibold tracking-tight">
+            CantoDeFe
+          </span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">
