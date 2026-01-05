@@ -58,21 +58,11 @@ const Hero = () => {
             Sorprende a tu ser querido con una canción cristiana personalizada que nunca olvidará
           </motion.p>
 
-          {/* Subheadline */}
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="text-lg md:text-xl font-serif italic text-muted-foreground mb-8"
-          >
-            Entregado con amor, oración y cuidado en 7 días
-          </motion.p>
-
           {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           >
             <Link to="/create?step=basics">
               <Button size="lg" className="text-base px-8 py-6 gap-2 shadow-lg hover:shadow-xl transition-shadow">
@@ -86,10 +76,10 @@ const Hero = () => {
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-            className="text-sm text-muted-foreground mt-4 font-medium"
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="text-sm text-muted-foreground mt-4 font-medium italic"
           >
-            Solo 8 lugares disponibles esta semana
+            Entregado con amor, oración y cuidado en 7 días
           </motion.p>
 
           {/* Social Proof */}
