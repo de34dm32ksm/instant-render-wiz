@@ -3,6 +3,7 @@ import { Star, Play, Pause } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useRef } from "react";
 import firstCancion from "@/assets/first-cancion.mp4";
+import firstReviewAudio from "@/assets/first-review-audio.mp4";
 
 const testimonials = [
   {
@@ -10,7 +11,7 @@ const testimonials = [
     author: "Maria E.",
     verified: true,
     songTitle: "Dios Me Dio a Ti",
-    audio: firstCancion,
+    audio: firstReviewAudio,
   },
   {
     quote: "Una canción muy muy hermosa. ¡Me encantó y a Dave también! La puse en mi Facebook, se la envié a sus hijos para que la escucharan... Estaré cantando sus alabanzas.",
