@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { FileText, Music, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import howItWorksBg from "@/assets/how-it-works-bg.jpg";
 
@@ -8,17 +7,14 @@ const steps = [
   {
     number: 1,
     title: "Comparte su Historia",
-    icon: FileText,
   },
   {
     number: 2,
     title: "Creamos tu Canción",
-    icon: Music,
   },
   {
     number: 3,
     title: "Entregada a tu Correo",
-    icon: Mail,
   },
 ];
 
@@ -32,6 +28,7 @@ const HowItWorks = () => {
           backgroundImage: `url(${howItWorksBg})`,
         }}
       />
+      <div className="absolute inset-0 bg-black/40" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.h2 
@@ -39,7 +36,7 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-serif font-semibold text-center mb-12"
+          className="text-3xl md:text-4xl font-serif font-semibold text-center mb-12 text-white"
         >
           Cómo Funciona CantoDeFe
         </motion.h2>
@@ -54,15 +51,10 @@ const HowItWorks = () => {
               transition={{ delay: index * 0.15, duration: 0.5 }}
               className="flex flex-col items-center text-center"
             >
-              <div className="relative mb-4">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                  <step.icon className="w-7 h-7 text-primary" />
-                </div>
-                <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
-                  {step.number}
-                </span>
-              </div>
-              <p className="text-lg font-medium">{step.title}</p>
+              <span className="text-5xl md:text-6xl font-bold text-white mb-3">
+                {step.number}
+              </span>
+              <p className="text-lg font-medium text-white">{step.title}</p>
             </motion.div>
           ))}
         </div>
