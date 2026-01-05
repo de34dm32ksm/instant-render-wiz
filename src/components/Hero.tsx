@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Play, Gift, Star } from "lucide-react";
+import { Gift, Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-couple.jpg";
+import headerVideo from "@/assets/header-video.mov";
 
 const Hero = () => {
   return (
@@ -17,15 +17,14 @@ const Hero = () => {
             className="relative mb-8 w-full max-w-lg"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-elevated">
-              <img 
-                src={heroImage} 
-                alt="Pareja feliz compartiendo un momento emotivo" 
+              <video 
+                src={headerVideo} 
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="w-full aspect-video object-cover"
               />
-              <button className="absolute bottom-4 right-4 bg-card/95 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 text-sm font-medium shadow-lg hover:bg-card transition-colors">
-                <Play className="w-4 h-4 fill-primary text-primary" />
-                Escuchar Ejemplo
-              </button>
             </div>
           </motion.div>
 
