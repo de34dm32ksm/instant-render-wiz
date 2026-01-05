@@ -48,7 +48,7 @@ const Hero = () => {
             transition={{ delay: 0.25, duration: 0.6 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight mb-4"
           >
-            «¡Este Canto de Fe me hizo llorar!»
+            ¡Este Canto de Fe me hizo llorar!
           </motion.h1>
 
           {/* Subheadline */}
