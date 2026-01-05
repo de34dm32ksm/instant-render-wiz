@@ -10,16 +10,10 @@ import { toast } from "sonner";
 const STEPS = ["basics", "occasion", "story", "style", "details", "review"];
 
 const recipientOptions = [
-  "Esposo",
-  "Esposa", 
-  "Hijos",
-  "Padre",
-  "Madre",
-  "Hermano/a",
-  "Amigo/a",
-  "Para Mí",
-  "Grupo de Personas",
-  "Otro",
+  "Hermano",
+  "Hermana", 
+  "Amigo",
+  "Amiga",
 ];
 
 
