@@ -35,7 +35,17 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4"
           >
-            La Plataforma #1 de Canciones Personalizadas — Más de 1,000 Familias Emocionadas
+            LA PLATAFORMA Nº 1 DE CANCIONES CRISTIANAS PERSONALIZADAS
+          </motion.p>
+
+          {/* Quote */}
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+            className="text-lg md:text-xl font-serif italic text-primary mb-4"
+          >
+            «¡Este Canto de Fe me hizo llorar!»
           </motion.p>
 
           {/* Main Headline */}
@@ -45,7 +55,7 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight mb-6"
           >
-            Haz que Alguien Llore de Alegría En Solo 7 Días
+            Sorprende a tu ser querido con una canción cristiana personalizada que nunca olvidará
           </motion.h1>
 
           {/* Subheadline */}
@@ -55,7 +65,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="text-lg md:text-xl font-serif italic text-muted-foreground mb-8"
           >
-            Músicos cristianos profesionales convierten la historia de tu ser querido en una canción única — solo necesitas responder 5 preguntas simples.
+            Entregado con amor, oración y cuidado en 7 días
           </motion.p>
 
           {/* CTA Button */}
