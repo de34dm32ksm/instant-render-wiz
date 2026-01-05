@@ -38,25 +38,25 @@ const Hero = () => {
             LA PLATAFORMA Nº 1 DE CANCIONES CRISTIANAS PERSONALIZADAS
           </motion.p>
 
-          {/* Quote */}
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.25, duration: 0.5 }}
-            className="text-lg md:text-xl font-serif italic text-primary mb-4"
-          >
-            «¡Este Canto de Fe me hizo llorar!»
-          </motion.p>
-
           {/* Main Headline */}
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight mb-6"
+            transition={{ delay: 0.25, duration: 0.6 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-serif font-semibold leading-tight mb-4"
+          >
+            «¡Este Canto de Fe me hizo llorar!»
+          </motion.h1>
+
+          {/* Subheadline */}
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-lg md:text-xl font-serif text-muted-foreground mb-6"
           >
             Sorprende a tu ser querido con una canción cristiana personalizada que nunca olvidará
-          </motion.h1>
+          </motion.p>
 
           {/* Subheadline */}
           <motion.p 
