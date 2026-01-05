@@ -10,10 +10,18 @@ import { toast } from "sonner";
 const STEPS = ["basics", "occasion", "story", "style", "details", "review"];
 
 const recipientOptions = [
+  "Esposo",
+  "Esposa",
   "Hermano",
   "Hermana", 
   "Amigo",
   "Amiga",
+  "Niño",
+  "Niña",
+  "Padre",
+  "Madre",
+  "Para mí",
+  "Otro",
 ];
 
 
@@ -40,6 +48,7 @@ const Create = () => {
   const [formData, setFormData] = useState({
     recipient: "",
     recipientName: "",
+    customRelationship: "",
     genre: "",
     qualities: "",
     memories: "",
@@ -146,6 +155,25 @@ const Create = () => {
                   Tip: agrega la pronunciación para mayor claridad (ej. Alicia: ah-lee-sha)
                 </p>
               </div>
+
+              {formData.recipient === "Otro" && (
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    ¿Cuál es tu relación con ellos?
+                  </label>
+                  <Input
+                    placeholder="Ej: Abuelo, Tía, Primo, etc."
+                    value={formData.customRelationship}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        customRelationship: e.target.value,
+                      }))
+                    }
+                    className="max-w-md"
+                  />
+                </div>
+              )}
             </div>
           </motion.div>
         );
