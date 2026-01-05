@@ -24,10 +24,10 @@ const testimonials = [
 ];
 
 const songPreviews = [
-  { title: "Tres Apretones", artist: "CanciónDivina" },
-  { title: "Mi Corazón es Tuyo", artist: "CanciónDivina" },
-  { title: "El Amor de Mamá", artist: "CanciónDivina" },
-  { title: "Corazones Elegidos", artist: "CanciónDivina" },
+  { title: "Tres Apretones", artist: "Canto de Fe" },
+  { title: "Mi Corazón es Tuyo", artist: "Canto de Fe" },
+  { title: "El Amor de Mamá", artist: "Canto de Fe" },
+  { title: "Corazones Elegidos", artist: "Canto de Fe" },
 ];
 
 const Testimonials = () => {
@@ -41,7 +41,7 @@ const Testimonials = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-serif font-semibold text-center mb-12"
         >
-          Por qué más de 1000 Clientes Aman CanciónDivina
+          Por qué más de 1,000 clientes aman Canto de Fe
         </motion.h2>
 
         {/* Song Previews Grid */}
