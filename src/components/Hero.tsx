@@ -107,9 +107,6 @@ const Hero = () => {
                     className="w-8 h-8 rounded-full border-2 border-background object-cover"
                   />
                 ))}
-                <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground border-2 border-background flex items-center justify-center text-xs font-semibold">
-                  +998
-                </div>
               </div>
               <span className="text-sm text-muted-foreground">Amado por 1000+ familias</span>
             </div>
