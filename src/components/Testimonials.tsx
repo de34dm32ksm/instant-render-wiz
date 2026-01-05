@@ -1,36 +1,52 @@
 import { motion } from "framer-motion";
-import { Star, Play } from "lucide-react";
+import { Star, Play, Pause } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useState, useRef } from "react";
+import firstCancion from "@/assets/first-cancion.mp4";
 
 const testimonials = [
   {
     quote: "¡Oh alabado sea Dios! Esto es absolutamente impresionante. No puedo creerlo... Voy a tener dificultades para mantener esto en secreto hasta el domingo. ¡Lo escucharemos camino a la iglesia! Dios bendiga el trabajo que hacen.",
-    author: "Wendy B.",
+    author: "Maria E.",
     verified: true,
     songTitle: "Dios Me Dio a Ti",
+    audio: firstCancion,
   },
   {
-    quote: "Una canción muy muy hermosa. ¡Me encantó y a Dave también! La puse en mi Facebook, se la envié a sus hijos para que la escucharan... Estaré cantando 🎵 sus alabanzas.",
+    quote: "Una canción muy muy hermosa. ¡Me encantó y a Dave también! La puse en mi Facebook, se la envié a sus hijos para que la escucharan... Estaré cantando sus alabanzas.",
     author: "Markeeta B.",
     verified: true,
     songTitle: "Su Historia de Amor",
+    audio: firstCancion,
   },
   {
     quote: "Absolutamente hermosa, capturaron momentos tan especiales... ambos estábamos llorando. No podría pedir una canción más bella. Muchas gracias por este increíble regalo.",
     author: "Pamela S.",
     verified: true,
     songTitle: "Aún Creo",
+    audio: firstCancion,
   },
 ];
 
-const songPreviews = [
-  { title: "Tres Apretones", artist: "Canto de Fe" },
-  { title: "Mi Corazón es Tuyo", artist: "Canto de Fe" },
-  { title: "El Amor de Mamá", artist: "Canto de Fe" },
-  { title: "Corazones Elegidos", artist: "Canto de Fe" },
-];
-
 const Testimonials = () => {
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const handlePlay = (index: number, audioSrc: string) => {
+    if (playingIndex === index) {
+      audioRef.current?.pause();
+      setPlayingIndex(null);
+    } else {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      audioRef.current = new Audio(audioSrc);
+      audioRef.current.play();
+      audioRef.current.onended = () => setPlayingIndex(null);
+      setPlayingIndex(index);
+    }
+  };
+
   return (
     <section id="reviews" className="py-16 md:py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
@@ -44,31 +60,6 @@ const Testimonials = () => {
           Por qué más de 1,000 clientes aman Canto de Fe
         </motion.h2>
 
-        {/* Song Previews Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 max-w-4xl mx-auto">
-          {songPreviews.map((song, index) => (
-            <motion.div
-              key={song.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.4 }}
-            >
-              <Card className="overflow-hidden group cursor-pointer hover:shadow-card transition-shadow">
-                <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 relative flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-card shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="w-6 h-6 text-primary fill-primary" />
-                  </div>
-                </div>
-                <CardContent className="p-3">
-                  <p className="text-sm font-medium truncate">{song.title}</p>
-                  <p className="text-xs text-muted-foreground">{song.artist}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-
         {/* Text Testimonials */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
@@ -81,10 +72,22 @@ const Testimonials = () => {
             >
               <Card className="h-full">
                 <CardContent className="p-6">
-                  <div className="flex gap-0.5 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                    ))}
+                  <div className="flex items-center gap-4 mb-4">
+                    <button
+                      onClick={() => handlePlay(index, testimonial.audio)}
+                      className="w-12 h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 transition-colors shrink-0"
+                    >
+                      {playingIndex === index ? (
+                        <Pause className="w-5 h-5 text-primary-foreground fill-primary-foreground" />
+                      ) : (
+                        <Play className="w-5 h-5 text-primary-foreground fill-primary-foreground ml-0.5" />
+                      )}
+                    </button>
+                    <div className="flex gap-0.5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                      ))}
+                    </div>
                   </div>
                   <p className="text-sm leading-relaxed mb-4">"{testimonial.quote}"</p>
                   <div className="flex items-center gap-3">
