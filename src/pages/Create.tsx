@@ -22,28 +22,18 @@ const recipientOptions = [
   "Otro",
 ];
 
-const occasionOptions = [
-  "Cumpleaños",
-  "Aniversario",
-  "Boda",
-  "Graduación",
-  "Memorial",
-  "Sanación",
-  "Agradecimiento",
-  "Bautizo",
-  "Navidad",
-  "Día de las Madres",
-  "Día de los Padres",
-  "Otro",
-];
 
-const styleOptions = [
-  "Contemporáneo",
-  "Gospel",
-  "Acústico",
-  "Himno Tradicional",
-  "Balada",
-  "Alegre/Festivo",
+const genreOptions = [
+  "Pop",
+  "Reggaetón",
+  "Rock",
+  "Mariachi",
+  "Cumbia",
+  "Rap",
+  "Bachata",
+  "Salsa",
+  "Merengue",
+  "Himnos",
 ];
 
 const Create = () => {
@@ -56,10 +46,10 @@ const Create = () => {
   const [formData, setFormData] = useState({
     recipient: "",
     recipientName: "",
-    occasion: "",
-    story: "",
-    style: "",
-    additionalDetails: "",
+    genre: "",
+    qualities: "",
+    memories: "",
+    specialMessage: "",
     email: "",
   });
 
@@ -177,20 +167,20 @@ const Create = () => {
           >
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl font-serif font-semibold mb-3">
-                ¿Cuál es la ocasión?
+                Elige un género
               </h1>
               <p className="text-muted-foreground">
-                Selecciona el motivo de esta canción especial
+                Género preferido <span className="text-primary">*</span>
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
-              {occasionOptions.map((option) => (
+              {genreOptions.map((option) => (
                 <button
                   key={option}
-                  onClick={() => handleSelectOption("occasion", option)}
+                  onClick={() => handleSelectOption("genre", option)}
                   className={`px-5 py-3 rounded-full border text-sm font-medium transition-all ${
-                    formData.occasion === option
+                    formData.genre === option
                       ? "bg-primary text-primary-foreground border-primary"
                       : "bg-background border-border hover:border-primary/50"
                   }`}
@@ -213,25 +203,25 @@ const Create = () => {
           >
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl font-serif font-semibold mb-3">
-                Cuéntanos tu historia
+                ¿Qué los hace especiales?
               </h1>
               <p className="text-muted-foreground">
-                Comparte los momentos, recuerdos y sentimientos que quieres expresar
+                Describe su carácter y las cualidades que más te gustan.
               </p>
             </div>
 
             <div className="max-w-2xl mx-auto">
+              <label className="block text-sm font-medium mb-2">
+                Sus cualidades más hermosas
+              </label>
               <Textarea
-                placeholder="Escribe aquí tu historia, recuerdos especiales, versículos bíblicos favoritos, o cualquier detalle que quieras incluir en la canción..."
-                value={formData.story}
+                placeholder="Describe las cualidades que más admiras de esta persona..."
+                value={formData.qualities}
                 onChange={(e) =>
-                  setFormData((prev) => ({ ...prev, story: e.target.value }))
+                  setFormData((prev) => ({ ...prev, qualities: e.target.value }))
                 }
                 className="min-h-[200px]"
               />
-              <p className="text-xs text-muted-foreground mt-2">
-                Entre más detalles compartas, más personalizada será tu canción.
-              </p>
             </div>
           </motion.div>
         );
@@ -247,27 +237,25 @@ const Create = () => {
           >
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl font-serif font-semibold mb-3">
-                Elige el estilo musical
+                Comparte tus recuerdos favoritos
               </h1>
               <p className="text-muted-foreground">
-                ¿Qué tipo de música le gusta a esa persona especial?
+                ¿Qué momentos con ellos atesoras más?
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
-              {styleOptions.map((option) => (
-                <button
-                  key={option}
-                  onClick={() => handleSelectOption("style", option)}
-                  className={`px-5 py-3 rounded-full border text-sm font-medium transition-all ${
-                    formData.style === option
-                      ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-background border-border hover:border-primary/50"
-                  }`}
-                >
-                  {option}
-                </button>
-              ))}
+            <div className="max-w-2xl mx-auto">
+              <label className="block text-sm font-medium mb-2">
+                Momentos especiales juntos
+              </label>
+              <Textarea
+                placeholder="Comparte los momentos y recuerdos que más atesoras..."
+                value={formData.memories}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, memories: e.target.value }))
+                }
+                className="min-h-[200px]"
+              />
             </div>
           </motion.div>
         );
@@ -283,28 +271,28 @@ const Create = () => {
           >
             <div className="text-center">
               <h1 className="text-3xl md:text-4xl font-serif font-semibold mb-3">
-                Detalles adicionales
+                Un mensaje desde tu corazón
               </h1>
               <p className="text-muted-foreground">
-                ¿Hay algo más que debamos saber?
+                Escribe cualquier otra cosa que sientas que sea relevante incluir en tu canción, ¡y haremos todo lo posible por incorporarlo!
               </p>
             </div>
 
             <div className="max-w-2xl mx-auto space-y-6">
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Notas adicionales (opcional)
+                  Mensaje especial
                 </label>
                 <Textarea
-                  placeholder="Cualquier otra información que quieras compartir..."
-                  value={formData.additionalDetails}
+                  placeholder="Escribe tu mensaje especial aquí..."
+                  value={formData.specialMessage}
                   onChange={(e) =>
                     setFormData((prev) => ({
                       ...prev,
-                      additionalDetails: e.target.value,
+                      specialMessage: e.target.value,
                     }))
                   }
-                  className="min-h-[120px]"
+                  className="min-h-[200px]"
                 />
               </div>
 
@@ -355,21 +343,29 @@ const Create = () => {
                 </span>
               </div>
               <div className="flex justify-between py-3 border-b">
-                <span className="text-muted-foreground">Ocasión:</span>
-                <span className="font-medium">{formData.occasion || "—"}</span>
-              </div>
-              <div className="flex justify-between py-3 border-b">
-                <span className="text-muted-foreground">Estilo:</span>
-                <span className="font-medium">{formData.style || "—"}</span>
+                <span className="text-muted-foreground">Género:</span>
+                <span className="font-medium">{formData.genre || "—"}</span>
               </div>
               <div className="flex justify-between py-3 border-b">
                 <span className="text-muted-foreground">Email:</span>
                 <span className="font-medium">{formData.email || "—"}</span>
               </div>
-              <div className="py-3">
-                <span className="text-muted-foreground block mb-2">Historia:</span>
+              <div className="py-3 border-b">
+                <span className="text-muted-foreground block mb-2">Cualidades:</span>
                 <p className="text-sm">
-                  {formData.story || "Sin historia proporcionada"}
+                  {formData.qualities || "—"}
+                </p>
+              </div>
+              <div className="py-3 border-b">
+                <span className="text-muted-foreground block mb-2">Momentos especiales:</span>
+                <p className="text-sm">
+                  {formData.memories || "—"}
+                </p>
+              </div>
+              <div className="py-3">
+                <span className="text-muted-foreground block mb-2">Mensaje especial:</span>
+                <p className="text-sm">
+                  {formData.specialMessage || "—"}
                 </p>
               </div>
             </div>
