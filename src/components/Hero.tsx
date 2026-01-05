@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Gift, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import headerVideo from "@/assets/header-video.mov";
+import testimonial1 from "@/assets/testimonial-1.png";
+import testimonial2 from "@/assets/testimonial-2.png";
+import testimonial3 from "@/assets/testimonial-3.png";
 
 const Hero = () => {
   return (
@@ -96,13 +99,13 @@ const Hero = () => {
             </div>
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div 
-                    key={i} 
-                    className="w-8 h-8 rounded-full bg-secondary border-2 border-background flex items-center justify-center text-xs font-medium text-muted-foreground"
-                  >
-                    {String.fromCharCode(64 + i)}
-                  </div>
+                {[testimonial1, testimonial2, testimonial3].map((img, i) => (
+                  <img 
+                    key={i}
+                    src={img}
+                    alt={`Cliente satisfecho ${i + 1}`}
+                    className="w-8 h-8 rounded-full border-2 border-background object-cover"
+                  />
                 ))}
                 <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground border-2 border-background flex items-center justify-center text-xs font-semibold">
                   +998
