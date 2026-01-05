@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FileText, Music, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import howItWorksBg from "@/assets/how-it-works-bg.jpg";
 
 const steps = [
   {
@@ -28,7 +29,7 @@ const HowItWorks = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80')",
+          backgroundImage: `url(${howItWorksBg})`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
@@ -42,7 +43,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-serif font-semibold text-center mb-12"
         >
-          Cómo Funciona CanciónDivina
+          Cómo Funciona CantoDeFe
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
