@@ -38,7 +38,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-serif font-semibold text-center mb-12 text-white"
         >
-          Cómo Funciona CantoDeFe
+          Cómo Funciona CantodeFe
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
