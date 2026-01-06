@@ -25,7 +25,7 @@ const GiftCategories = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-serif font-semibold text-center mb-12"
         >
-          ¡Regala una CanciónDivina a un Ser Querido, o a Ti Mismo!
+          Regala un Canto de Fe a quien más quieras… o a ti mismo!
         </motion.h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto mb-12">
