@@ -12,12 +12,12 @@ const Header = () => {
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">
-          <a 
-            href="#track" 
+          <Link 
+            to="/track-order" 
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             Seguir Pedido
-          </a>
+          </Link>
           <a 
             href="#reviews" 
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
