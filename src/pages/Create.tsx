@@ -7,7 +7,13 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 
-const STEPS = ["basics", "occasion", "story", "style", "details", "review"];
+const STEPS = ["basics", "voice", "occasion", "story", "style", "details", "review"];
+
+const voiceOptions = [
+  "Voz femenina",
+  "Voz masculina",
+  "Sin preferencia",
+];
 
 const recipientOptions = [
   "Esposo",
@@ -49,6 +55,7 @@ const Create = () => {
     recipient: "",
     recipientName: "",
     customRelationship: "",
+    voiceGender: "",
     genre: "",
     qualities: "",
     memories: "",
@@ -174,6 +181,42 @@ const Create = () => {
                   />
                 </div>
               )}
+            </div>
+          </motion.div>
+        );
+
+      case "voice":
+        return (
+          <motion.div
+            key="voice"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            className="space-y-8"
+          >
+            <div className="text-center">
+              <h1 className="text-3xl md:text-4xl font-serif font-semibold mb-3">
+                Género de voz preferido
+              </h1>
+              <p className="text-muted-foreground">
+                Recomendamos elegir tu propio género para que la voz te resulte más personal.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
+              {voiceOptions.map((option) => (
+                <button
+                  key={option}
+                  onClick={() => handleSelectOption("voiceGender", option)}
+                  className={`px-5 py-3 rounded-full border text-sm font-medium transition-all ${
+                    formData.voiceGender === option
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-background border-border hover:border-primary/50"
+                  }`}
+                >
+                  {option}
+                </button>
+              ))}
             </div>
           </motion.div>
         );
