@@ -84,8 +84,21 @@ const Create = () => {
   const handleSubmitToGoogleForm = () => {
     const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScEPvbdWRJpR-Y5liv86CUXXJlPeRxEHXj_8iEToRk_5U0daA/formResponse";
     
+    // Get the relationship value (custom if "Otro" was selected)
+    const relationshipValue = formData.recipient === "Otro" 
+      ? formData.customRelationship 
+      : formData.recipient;
+    
     const formDataToSend = new FormData();
-    formDataToSend.append("entry.646865340", formData.recipientName);
+    formDataToSend.append("entry.572932444", formData.recipient);           // 1. Para quien es?
+    formDataToSend.append("entry.646865340", formData.recipientName);       // 2. Come se llama?
+    formDataToSend.append("entry.381347280", relationshipValue);            // 3. Cual es tu relacion con ellos?
+    formDataToSend.append("entry.490417703", formData.genre);               // 4. Elige un genero musical
+    formDataToSend.append("entry.1200658450", formData.voiceGender);        // 5. Genero de voz preferido
+    formDataToSend.append("entry.1546025979", formData.qualities);          // 6. Que los hace especiales
+    formDataToSend.append("entry.1185637620", formData.memories);           // 7. Comparte tus recuerdos favoritos
+    formDataToSend.append("entry.988471068", formData.specialMessage);      // 8. Un mensaje desde tu corazon
+    formDataToSend.append("entry.1709259804", formData.email);              // 9. Tu correo electrónico
     
     fetch(formURL, {
       method: "POST",
@@ -94,10 +107,11 @@ const Create = () => {
     })
     .then(() => {
       console.log("Form submitted successfully");
-      alert("¡Gracias! Tu nombre ha sido enviado.");
+      toast.success("¡Gracias! Tu información ha sido enviada.");
     })
     .catch(error => {
       console.error("Error:", error);
+      toast.error("Hubo un error al enviar. Intenta de nuevo.");
     });
   };
 
