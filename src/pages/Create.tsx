@@ -456,7 +456,7 @@ const Create = () => {
               Paso {stepIndex + 1} de {STEPS.length}
             </span>
             <a href="/" className="font-serif text-xl font-semibold">
-              <span className="italic">Canción</span>Divina
+              <span className="italic">Canto</span>deFe
             </a>
             <span className="text-sm text-muted-foreground">
               {Math.round(progress)}% Completo
