@@ -5,7 +5,7 @@ import { Music, FileText, Clock, Play, Pause, Shield } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import whatYouGetAudio from "@/assets/what-you-get-audio.mp4";
-import vinylPlayer from "@/assets/vinyl-player.jpg";
+import vinylPlayer from "@/assets/vinyl-player.png";
 
 const features = [
   {
