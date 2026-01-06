@@ -30,19 +30,20 @@ const GiftCategories = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl mx-auto mb-12">
           {categories.map((category, index) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05, duration: 0.4 }}
-              className="group cursor-pointer"
-            >
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-secondary to-muted flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-soft group-hover:shadow-card">
-                {category.emoji}
-              </div>
-              <h3 className="text-center mt-3 font-medium text-sm">{category.title}</h3>
-            </motion.div>
+            <Link to="/create?step=basics" key={category.title}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05, duration: 0.4 }}
+                className="group cursor-pointer"
+              >
+                <div className="aspect-square rounded-2xl bg-gradient-to-br from-secondary to-muted flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-soft group-hover:shadow-card">
+                  {category.emoji}
+                </div>
+                <h3 className="text-center mt-3 font-medium text-sm">{category.title}</h3>
+              </motion.div>
+            </Link>
           ))}
         </div>
 
