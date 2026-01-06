@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Music, FileText, Clock, Play, Pause, Shield } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import whatYouGetAudio from "@/assets/what-you-get-audio.mp4";
 
 const features = [
   {
@@ -25,6 +26,57 @@ const features = [
 
 const WhatYouGet = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState("0:00");
+  const [duration, setDuration] = useState("0:00");
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const updateProgress = () => {
+      setProgress((audio.currentTime / audio.duration) * 100);
+      setCurrentTime(formatTime(audio.currentTime));
+    };
+
+    const handleLoadedMetadata = () => {
+      setDuration(formatTime(audio.duration));
+    };
+
+    const handleEnded = () => {
+      setIsPlaying(false);
+      setProgress(0);
+      setCurrentTime("0:00");
+    };
+
+    audio.addEventListener('timeupdate', updateProgress);
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
+    audio.addEventListener('ended', handleEnded);
+
+    return () => {
+      audio.removeEventListener('timeupdate', updateProgress);
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      audio.removeEventListener('ended', handleEnded);
+    };
+  }, []);
 
   return (
     <section className="py-16 md:py-24 bg-secondary/30">
@@ -36,7 +88,7 @@ const WhatYouGet = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-4xl font-serif font-semibold text-center mb-4"
         >
-          Lo Que Recibes
+          Qué Recibes
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0 }}
@@ -45,7 +97,7 @@ const WhatYouGet = () => {
           transition={{ delay: 0.1, duration: 0.5 }}
           className="text-center text-muted-foreground mb-12 max-w-xl mx-auto"
         >
-          Una vez que terminemos tu canción, recibirás un correo con un enlace para reproducir tu CanciónDivina ¡como abajo!
+          Cuando terminemos tu canción, recibirás un correo con un enlace para escuchar tu Canto de Fe, ¡como el ejemplo de abajo!
         </motion.p>
 
         <div className="max-w-4xl mx-auto">
@@ -58,9 +110,10 @@ const WhatYouGet = () => {
           >
             <Card className="mb-10 overflow-hidden">
               <CardContent className="p-6">
+                <audio ref={audioRef} src={whatYouGetAudio} />
                 <div className="flex items-center gap-4">
                   <button 
-                    onClick={() => setIsPlaying(!isPlaying)}
+                    onClick={togglePlay}
                     className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center shrink-0 hover:bg-primary/90 transition-colors"
                   >
                     {isPlaying ? (
@@ -70,14 +123,14 @@ const WhatYouGet = () => {
                     )}
                   </button>
                   <div className="flex-1 min-w-0">
-                    <p className="font-serif font-semibold text-lg truncate">Tu CanciónDivina Personalizada</p>
-                    <p className="text-sm text-muted-foreground">CanciónDivina</p>
+                    <p className="font-serif font-semibold text-lg truncate">Tu Canto de Fe Personalizado</p>
+                    <p className="text-sm text-muted-foreground">Canto de Fe</p>
                     <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full" style={{ width: "35%" }} />
+                      <div className="h-full bg-primary rounded-full transition-all" style={{ width: `${progress}%` }} />
                     </div>
                     <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                      <span>0:00</span>
-                      <span>3:54</span>
+                      <span>{currentTime}</span>
+                      <span>{duration}</span>
                     </div>
                   </div>
                 </div>
