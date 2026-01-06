@@ -112,34 +112,27 @@ const WhatYouGet = () => {
           >
             <audio ref={audioRef} src={whatYouGetAudio} />
             
-            {/* Vinyl Image with Play Button Overlay */}
-            <div className="relative cursor-pointer group" onClick={togglePlay}>
-              <motion.img 
-                src={vinylPlayer} 
-                alt="Canto de Fe Vinyl Player" 
-                className="w-full max-w-md mx-auto"
-                animate={{ rotate: isPlaying ? 360 : 0 }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: isPlaying ? Infinity : 0, 
-                  ease: "linear" 
-                }}
-              />
-              
-              {/* Play/Pause Overlay Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`w-20 h-20 rounded-full bg-primary/90 text-primary-foreground flex items-center justify-center transition-all group-hover:scale-110 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
-                  {isPlaying ? (
-                    <Pause className="w-10 h-10" />
-                  ) : (
-                    <Play className="w-10 h-10 ml-1" />
-                  )}
-                </div>
-              </div>
-            </div>
+            {/* Vinyl Image */}
+            <img 
+              src={vinylPlayer} 
+              alt="Canto de Fe Vinyl Player" 
+              className="w-full max-w-md mx-auto"
+            />
+
+            {/* Play Button Below Image */}
+            <button
+              onClick={togglePlay}
+              className="mt-6 w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center transition-transform hover:scale-110"
+            >
+              {isPlaying ? (
+                <Pause className="w-8 h-8" />
+              ) : (
+                <Play className="w-8 h-8 ml-1" />
+              )}
+            </button>
 
             {/* Progress Bar */}
-            <div className="w-full max-w-md mt-6">
+            <div className="w-full max-w-md mt-4">
               <div className="h-2 bg-muted rounded-full overflow-hidden">
                 <div className="h-full bg-primary rounded-full transition-all" style={{ width: `${progress}%` }} />
               </div>
