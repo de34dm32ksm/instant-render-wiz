@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useState, useRef } from "react";
 import firstCancion from "@/assets/first-cancion.mp4";
 import firstReviewAudio from "@/assets/first-review-audio.mp4";
+import secondReviewAudio from "@/assets/second-review-audio.mp4";
 
 const testimonials = [
   {
@@ -15,10 +16,10 @@ const testimonials = [
   },
   {
     quote: "Una canción muy muy hermosa. ¡Me encantó y a Dave también! La puse en mi Facebook, se la envié a sus hijos para que la escucharan... Estaré cantando sus alabanzas.",
-    author: "Markeeta B.",
+    author: "Sandra L.",
     verified: true,
     songTitle: "Su Historia de Amor",
-    audio: firstCancion,
+    audio: secondReviewAudio,
   },
   {
     quote: "Absolutamente hermosa, capturaron momentos tan especiales... ambos estábamos llorando. No podría pedir una canción más bella. Muchas gracias por este increíble regalo.",
