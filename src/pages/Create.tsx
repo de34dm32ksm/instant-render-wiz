@@ -63,7 +63,20 @@ const Create = () => {
     email: "",
   });
 
+  // Validation helpers
+  const isRelationshipValid =
+    formData.recipient !== "" &&
+    (formData.recipient !== "Otro" ||
+      formData.customRelationship.trim() !== "");
+
+  const isBasicsStepValid = isRelationshipValid;
+
   const handleNext = () => {
+    if (currentStep === "basics" && !isBasicsStepValid) {
+      toast.error("Por favor completa la relación antes de continuar");
+      return;
+    }
+
     if (stepIndex < STEPS.length - 1) {
       setSearchParams({ step: STEPS[stepIndex + 1] });
     }
@@ -82,12 +95,19 @@ const Create = () => {
   };
 
   const handleSubmitToGoogleForm = () => {
+    // Validate before submit
+    if (!isBasicsStepValid || !formData.email) {
+      toast.error("Faltan campos obligatorios");
+      return;
+    }
+
     const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScEPvbdWRJpR-Y5liv86CUXXJlPeRxEHXj_8iEToRk_5U0daA/formResponse";
     
     // Get the relationship value (custom if "Otro" was selected)
-    const relationshipValue = formData.recipient === "Otro" 
-      ? formData.customRelationship 
-      : formData.recipient;
+    const relationshipValue =
+      formData.recipient === "Otro"
+        ? formData.customRelationship.trim() || "Otro (no especificado)"
+        : formData.recipient;
     
     const formDataToSend = new FormData();
     formDataToSend.append("entry.572932444", formData.recipient);           // 1. Para quien es?
@@ -504,7 +524,11 @@ const Create = () => {
                 <ArrowLeft className="w-4 h-4" />
                 Atrás
               </Button>
-              <Button onClick={handleNext} className="gap-2">
+              <Button
+                onClick={handleNext}
+                className="gap-2"
+                disabled={currentStep === "basics" && !isBasicsStepValid}
+              >
                 Siguiente
                 <ArrowRight className="w-4 h-4" />
               </Button>
