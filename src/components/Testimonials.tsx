@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Star, Play, Pause } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useRef } from "react";
-import firstCancion from "@/assets/first-cancion.mp4";
 import firstReviewAudio from "@/assets/first-review-audio.mp4";
 import secondReviewAudio from "@/assets/second-review-audio.mp4";
+import thirdReviewAudio from "@/assets/third-review-audio.mp4";
 
 const testimonials = [
   {
@@ -23,10 +23,10 @@ const testimonials = [
   },
   {
     quote: "Absolutamente hermosa, capturaron momentos tan especiales... ambos estábamos llorando. No podría pedir una canción más bella. Muchas gracias por este increíble regalo.",
-    author: "Pamela S.",
+    author: "Patricia Q.",
     verified: true,
     songTitle: "Aún Creo",
-    audio: firstCancion,
+    audio: thirdReviewAudio,
   },
 ];
 
