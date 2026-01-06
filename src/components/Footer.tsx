@@ -15,9 +15,9 @@ const Footer = () => {
             <Link to="/privacy-policy" className="hover:text-foreground transition-colors">
               Política de Privacidad
             </Link>
-            <a href="#" className="hover:text-foreground transition-colors">
+            <Link to="/terms-of-service" className="hover:text-foreground transition-colors">
               Términos de Servicio
-            </a>
+            </Link>
             <a href="mailto:CantodeFe@proton.me" className="hover:text-foreground transition-colors">
               Contacto
             </a>
