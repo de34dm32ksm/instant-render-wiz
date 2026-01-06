@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 
-const STEPS = ["basics", "voice", "occasion", "story", "style", "details", "review"];
+const STEPS = ["basics", "style-preferences", "story", "style", "details", "review"];
 
 const voiceOptions = [
   "Voz femenina",
@@ -185,74 +185,69 @@ const Create = () => {
           </motion.div>
         );
 
-      case "voice":
+      case "style-preferences":
         return (
           <motion.div
-            key="voice"
+            key="style-preferences"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="space-y-8"
+            className="space-y-10"
           >
-            <div className="text-center">
-              <h1 className="text-3xl md:text-4xl font-serif font-semibold mb-3">
-                Género de voz preferido
-              </h1>
-              <p className="text-muted-foreground">
-                Recomendamos elegir tu propio género para que la voz te resulte más personal.
-              </p>
+            {/* Voice Gender Section */}
+            <div className="space-y-4">
+              <div className="text-center">
+                <h1 className="text-3xl md:text-4xl font-serif font-semibold mb-3">
+                  Género de voz preferido
+                </h1>
+                <p className="text-muted-foreground">
+                  Recomendamos elegir tu propio género para que la voz te resulte más personal.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
+                {voiceOptions.map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => handleSelectOption("voiceGender", option)}
+                    className={`px-5 py-3 rounded-full border text-sm font-medium transition-all ${
+                      formData.voiceGender === option
+                        ? "bg-primary text-primary-foreground border-primary"
+                        : "bg-background border-border hover:border-primary/50"
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
-              {voiceOptions.map((option) => (
-                <button
-                  key={option}
-                  onClick={() => handleSelectOption("voiceGender", option)}
-                  className={`px-5 py-3 rounded-full border text-sm font-medium transition-all ${
-                    formData.voiceGender === option
-                      ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-background border-border hover:border-primary/50"
-                  }`}
-                >
-                  {option}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        );
+            {/* Music Genre Section */}
+            <div className="space-y-4">
+              <div className="text-center">
+                <h2 className="text-2xl md:text-3xl font-serif font-semibold mb-3">
+                  Elige un género musical
+                </h2>
+                <p className="text-muted-foreground">
+                  Género preferido <span className="text-primary">*</span>
+                </p>
+              </div>
 
-      case "occasion":
-        return (
-          <motion.div
-            key="occasion"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            className="space-y-8"
-          >
-            <div className="text-center">
-              <h1 className="text-3xl md:text-4xl font-serif font-semibold mb-3">
-                Elige un género
-              </h1>
-              <p className="text-muted-foreground">
-                Género preferido <span className="text-primary">*</span>
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
-              {genreOptions.map((option) => (
-                <button
-                  key={option}
-                  onClick={() => handleSelectOption("genre", option)}
-                  className={`px-5 py-3 rounded-full border text-sm font-medium transition-all ${
-                    formData.genre === option
-                      ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-background border-border hover:border-primary/50"
-                  }`}
-                >
-                  {option}
-                </button>
-              ))}
+              <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
+                {genreOptions.map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => handleSelectOption("genre", option)}
+                    className={`px-5 py-3 rounded-full border text-sm font-medium transition-all ${
+                      formData.genre === option
+                        ? "bg-primary text-primary-foreground border-primary"
+                        : "bg-background border-border hover:border-primary/50"
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
             </div>
           </motion.div>
         );
