@@ -16,7 +16,7 @@ const Footer = () => {
             <a href="#" className="hover:text-foreground transition-colors">
               Términos de Servicio
             </a>
-            <a href="mailto:contact@hosannasong.com" className="hover:text-foreground transition-colors">
+            <a href="mailto:CantodeFe@proton.me" className="hover:text-foreground transition-colors">
               Contacto
             </a>
           </nav>

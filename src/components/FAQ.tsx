@@ -88,9 +88,9 @@ const FAQ = () => {
           className="text-center mt-10"
         >
           <p className="text-muted-foreground">
-            ¿Aún tienes dudas?{" "}
-            <a href="mailto:contact@hosannasong.com" className="text-primary hover:underline font-medium">
-              contact@hosannasong.com
+            Contáctanos en{" "}
+            <a href="mailto:CantodeFe@proton.me" className="text-primary hover:underline font-medium">
+              CantodeFe@proton.me
             </a>
           </p>
         </motion.div>
