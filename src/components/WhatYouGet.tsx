@@ -5,6 +5,7 @@ import { Music, FileText, Clock, Play, Pause, Shield } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import whatYouGetAudio from "@/assets/what-you-get-audio.mp4";
+import vinylPlayer from "@/assets/vinyl-player.jpg";
 
 const features = [
   {
@@ -101,41 +102,52 @@ const WhatYouGet = () => {
         </motion.p>
 
         <div className="max-w-4xl mx-auto">
-          {/* Audio Player Card */}
+          {/* Vinyl Player with Image */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.5 }}
+            className="mb-10 flex flex-col items-center"
           >
-            <Card className="mb-10 overflow-hidden">
-              <CardContent className="p-6">
-                <audio ref={audioRef} src={whatYouGetAudio} />
-                <div className="flex items-center gap-4">
-                  <button 
-                    onClick={togglePlay}
-                    className="w-14 h-14 rounded-full bg-primary text-primary-foreground flex items-center justify-center shrink-0 hover:bg-primary/90 transition-colors"
-                  >
-                    {isPlaying ? (
-                      <Pause className="w-6 h-6" />
-                    ) : (
-                      <Play className="w-6 h-6 ml-1" />
-                    )}
-                  </button>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-serif font-semibold text-lg truncate">Tu Canto de Fe Personalizado</p>
-                    <p className="text-sm text-muted-foreground">Canto de Fe</p>
-                    <div className="mt-2 h-1.5 bg-muted rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full transition-all" style={{ width: `${progress}%` }} />
-                    </div>
-                    <div className="flex justify-between text-xs text-muted-foreground mt-1">
-                      <span>{currentTime}</span>
-                      <span>{duration}</span>
-                    </div>
-                  </div>
+            <audio ref={audioRef} src={whatYouGetAudio} />
+            
+            {/* Vinyl Image with Play Button Overlay */}
+            <div className="relative cursor-pointer group" onClick={togglePlay}>
+              <motion.img 
+                src={vinylPlayer} 
+                alt="Canto de Fe Vinyl Player" 
+                className="w-full max-w-md mx-auto"
+                animate={{ rotate: isPlaying ? 360 : 0 }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: isPlaying ? Infinity : 0, 
+                  ease: "linear" 
+                }}
+              />
+              
+              {/* Play/Pause Overlay Button */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className={`w-20 h-20 rounded-full bg-primary/90 text-primary-foreground flex items-center justify-center transition-all group-hover:scale-110 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
+                  {isPlaying ? (
+                    <Pause className="w-10 h-10" />
+                  ) : (
+                    <Play className="w-10 h-10 ml-1" />
+                  )}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+
+            {/* Progress Bar */}
+            <div className="w-full max-w-md mt-6">
+              <div className="h-2 bg-muted rounded-full overflow-hidden">
+                <div className="h-full bg-primary rounded-full transition-all" style={{ width: `${progress}%` }} />
+              </div>
+              <div className="flex justify-between text-sm text-muted-foreground mt-2">
+                <span>{currentTime}</span>
+                <span>{duration}</span>
+              </div>
+            </div>
           </motion.div>
 
           {/* Features Grid */}
