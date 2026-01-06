@@ -8,7 +8,7 @@ const AnnouncementBar = () => {
         to="/create?step=basics" 
         className="inline-flex items-center gap-2 text-sm font-medium hover:opacity-90 transition-opacity"
       >
-        <span>✨ ¡Promoción de fin de año activa ahora!</span>
+        <span>¡Promoción de fin de año activa ahora!</span>
         <span className="underline inline-flex items-center gap-1">
           Crea tu canción <ArrowRight className="w-4 h-4" />
         </span>
