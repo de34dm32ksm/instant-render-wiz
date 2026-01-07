@@ -42,6 +42,7 @@ const genreOptions = [
   "Salsa",
   "Merengue",
   "Himnos",
+  "Alabanzas",
 ];
 
 const Create = () => {
