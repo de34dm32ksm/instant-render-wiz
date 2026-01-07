@@ -561,7 +561,7 @@ const Create = () => {
             .
           </p>
           <p className="text-center text-xs text-muted-foreground/50 mt-4 uppercase tracking-widest">
-            canciondivina.com
+            CantodeFe
           </p>
         </div>
       </main>

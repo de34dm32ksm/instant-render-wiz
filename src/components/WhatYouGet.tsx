@@ -11,7 +11,7 @@ const features = [
   {
     icon: Music,
     title: "Canción de Calidad Radial",
-    description: "CanciónDivina de calidad radial, lista para compartir",
+    description: "Canto de Fe de calidad radial, lista para compartir",
   },
   {
     icon: FileText,
