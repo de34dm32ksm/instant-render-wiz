@@ -467,7 +467,7 @@ const Create = () => {
 
             <div className="text-center">
               <Button size="lg" className="px-12" onClick={handleSubmitToGoogleForm}>
-                Continuar al Pago
+                Enviar
               </Button>
               <p className="text-xs text-muted-foreground mt-3">
                 Garantía de devolución de 30 días
