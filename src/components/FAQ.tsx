@@ -9,15 +9,15 @@ import {
 const faqs = [
   {
     question: "¿Cuánto cuesta una canción personalizada?",
-    answer: "Cada CanciónDivina tiene un precio accesible para que puedas regalar un recuerdo único a tu ser querido. Visita nuestra página de creación para ver los precios actuales.",
+    answer: "Cada CantodeFe tiene un precio accesible para que puedas regalar un recuerdo único a tu ser querido. Visita nuestra página de creación para ver los precios actuales.",
   },
   {
-    question: "¿Qué hace que una CanciónDivina sea tan única?",
-    answer: "Cada CanciónDivina está escrita a medida desde tu historia. Es un regalo único enraizado en las Escrituras, la oración y el cuidado genuino.",
+    question: "¿Qué hace que una CantodeFe sea tan única?",
+    answer: "Cada CantodeFe está escrita a medida desde tu historia. Es un regalo único enraizado en las Escrituras, la oración y el cuidado genuino.",
   },
   {
     question: "La necesito para una fecha especial. ¿Cuándo llegará?",
-    answer: "Tu CanciónDivina terminada se entrega en 7 días. Opcionalmente, si necesitas tu canción más rápido, podemos entregarla en 24 horas por una tarifa adicional.",
+    answer: "Tu CantodeFe terminada se entrega en 7 días. Opcionalmente, si necesitas tu canción más rápido, podemos entregarla en 24 horas por una tarifa adicional.",
   },
   {
     question: "¿Realmente puedo obtener una canción personalizada en solo 24 horas?",
@@ -33,15 +33,15 @@ const faqs = [
   },
   {
     question: "¿Cómo ocurre la magia? ¿Cuál es el proceso?",
-    answer: "Cada CanciónDivina se crea con el mismo estándar que las canciones que escuchas en la radio. Nuestros letristas ponen su corazón en hacer cada letra personal y significativa, luego nuestros productores usan la última tecnología de producción musical para dar vida a tus letras.",
+    answer: "Cada CantodeFe se crea con el mismo estándar que las canciones que escuchas en la radio. Nuestros letristas ponen su corazón en hacer cada letra personal y significativa, luego nuestros productores usan la última tecnología de producción musical para dar vida a tus letras.",
   },
   {
     question: "¿Cómo recibiré y compartiré mi canción?",
-    answer: "Recibirás un enlace seguro por correo electrónico para reproducir tu CanciónDivina en cualquier dispositivo y compartirla fácilmente con familiares y amigos.",
+    answer: "Recibirás un enlace seguro por correo electrónico para reproducir tu CantodeFe en cualquier dispositivo y compartirla fácilmente con familiares y amigos.",
   },
   {
     question: "¿Podemos reproducir esto en nuestra iglesia o evento?",
-    answer: "Sí, puedes compartir y reproducir tu CanciónDivina en eventos privados y reuniones de la iglesia.",
+    answer: "Sí, puedes compartir y reproducir tu CantodeFe en eventos privados y reuniones de la iglesia.",
   },
 ];
 
