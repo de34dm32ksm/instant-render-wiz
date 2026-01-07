@@ -301,7 +301,7 @@ const Create = () => {
                 ¿Qué los hace especiales?
               </h1>
               <p className="text-muted-foreground">
-                Describe su carácter y las cualidades que más te gustan.
+                Describe sus características y las cualidades que más te gustan.
               </p>
             </div>
 
