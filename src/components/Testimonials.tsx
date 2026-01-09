@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Star, Play, Pause } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useRef } from "react";
-import firstReviewAudio from "@/assets/first-review-audio.mp4";
+import firstReviewAudio from "@/assets/maria-review-audio.mp4";
 import secondReviewAudio from "@/assets/second-review-audio.mp4";
 import thirdReviewAudio from "@/assets/third-review-audio.mp4";
 
