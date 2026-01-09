@@ -3,8 +3,8 @@ import { Star, Play, Pause } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState, useRef } from "react";
 import firstReviewAudio from "@/assets/maria-review-audio.mp4";
-import secondReviewAudio from "@/assets/second-review-audio.mp4";
-import thirdReviewAudio from "@/assets/third-review-audio.mp4";
+import secondReviewAudio from "@/assets/sandra-review-audio.mp4";
+import thirdReviewAudio from "@/assets/patricia-review-audio.mp4";
 
 const testimonials = [
   {
