@@ -9,6 +9,7 @@
       gtag('js', new Date());
       gtag('config', 'G-XCKJ09SJN4');
     </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CanciónDivina - Canciones Cristianas Personalizadas</title>
@@ -23,10 +24,16 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@CancionDivina" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- WICHTIG für Custom Domain auf GitHub Pages -->
+    <base href="/" />
+    <script type="module" crossorigin src="/assets/index-COWbPL8G.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-n0Bk0xa0.css">
   </head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<body>
+  <div id="root"></div>
+  
+  <!-- FIX: Relativer Pfad – das löst den Rollup-Error -->
+</body>
 </html>
