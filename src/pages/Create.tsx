@@ -426,7 +426,7 @@ const Create = () => {
                 Revisa tu pedido
               </h1>
               <p className="text-muted-foreground">
-                Confirma los detalles de tu canción personalizada
+                Confirma los detalles de tu canción personalizada y haz clic en el botón «Enviar».
               </p>
             </div>
 
