@@ -78,6 +78,15 @@ const Create = () => {
       return;
     }
 
+    // Submit to Google Form when moving from details to review
+    if (currentStep === "details") {
+      if (!formData.email) {
+        toast.error("Por favor ingresa tu correo electrónico");
+        return;
+      }
+      handleSubmitToGoogleForm();
+    }
+
     if (stepIndex < STEPS.length - 1) {
       setSearchParams({ step: STEPS[stepIndex + 1] });
     }
@@ -466,9 +475,9 @@ const Create = () => {
             </div>
 
             <div className="text-center">
-              <Button size="lg" className="px-12" onClick={handleSubmitToGoogleForm}>
-                Enviar
-              </Button>
+              <p className="text-sm text-primary font-medium">
+                ¡Tu solicitud ha sido enviada!
+              </p>
               <p className="text-xs text-muted-foreground mt-3">
                 Garantía de devolución de 30 días
               </p>
